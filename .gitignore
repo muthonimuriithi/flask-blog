@@ -1,3 +1,16 @@
+# directories
+**/__pycache__/
+
+# if you use vscode
+.vscode/
+
+# if you use pycharm
+.idea/
+
+# whatever the name of your virtual environment
+env/
 virtual/
+
+# files
 *.pyc
-__pycache__/
+start.sh
