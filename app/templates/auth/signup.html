@@ -2,14 +2,19 @@
 {%import "bootstrap/wtf.html" as wtf%}
 {%block content%}
 <br><br><br>
+<body class="ui"  style="background-color: beige;">
+    
+
 <div class="container">
     <div class="row">
         <div class="col-md-2"></div>
-        <div class="col-md-8">
+        <div class="col-md-8" >
+            <h2>Sign-up form</h2>
             {{wtf.quick_form(signup_form)}}
         </div>
         <div class="col-md-2"></div>
     </div>
 </div>
+</body>
 
 {%endblock%}
