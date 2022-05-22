@@ -1,6 +1,5 @@
 from . import db
-from werkzeug.security import (generate_password_hash,
-                               check_password_hash)
+from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import UserMixin
 from . import login_manager
 
@@ -8,7 +7,7 @@ from . import login_manager
 def user_loader(user_id):
     return User.query.get(int(user_id))
 
-class User(UserMixin, db.Model):
+class User(db.Model, UserMixin):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key = True)
     first_name = db.Column(db.String(255))
@@ -18,15 +17,11 @@ class User(UserMixin, db.Model):
     bio = db.Column(db.String())
     avatar_path = db.Column(db.String())
     password_hash = db.Column(db.String(255))
-    posts = db.relationship("Post",
-                            backref = "user",
-                            lazy = "dynamic")
-    comments = db.relationship("Comment",
-                                backref = "user",
-                                lazy = "dynamic")
-    liked = db.relationship("PostLike",
-                            backref = "user", 
-                            lazy = "dynamic")
+    posts = db.relationship ("Post", backref = "user", lazy = "dynamic")
+    comments = db.relationship("Comment", backref = "user", lazy = "dynamic")
+    liked = db.relationship("PostLike", backref = "user",  lazy = "dynamic")
+                            
+                           
 
     @property
     def password(self):
@@ -39,26 +34,26 @@ class User(UserMixin, db.Model):
     def verify_password(self, password):
         return check_password_hash(self.password_hash, password)
 
-    # User like logic
+    
     def like_post(self, post):
         if not self.has_liked_post(post):
             like = PostLike(user_id = self.id, post_id = post.id)
             db.session.add(like)
 
-    # User dislike logic
+    
     def unlike_post(self, post):
         if self.has_liked_post(post):
             PostLike.query.filter_by(
                 user_id = self.id,
                 post_id = post.id).delete()
 
-    # Check if user has liked post
+    
     def has_liked_post(self, post):
         return PostLike.query.filter(
             PostLike.user_id == self.id,
             PostLike.post_id == post.id).count() > 0
 
-    # string representaion to print out a row of a column, important in debugging
+
     def __repr__(self):
         return f"User {self.username}"
 
@@ -74,10 +69,10 @@ class Post(db.Model):
     downvotes = db.Column(db.Integer, default = 0)
     post_by = db.Column(db.String)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
-    comments = db.relationship("Comment", 
-                                foreign_keys = "Comment.post_id", 
-                                backref = "post", 
-                                lazy = "dynamic")
+    comments = db.relationship("Comment", foreign_keys = "Comment.post_id", backref = "post",lazy = "dynamic")
+                                 
+                               
+
 
     def save_post(self):
         db.session.add(self)
