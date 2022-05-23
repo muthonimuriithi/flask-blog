@@ -9,14 +9,14 @@ class config:
         MAIL_USE_SSL = True
         MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
         MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
-        SQLALCHEMY_DATABASE_URI = os.environ.get("SQLALCHEMY_DATABASE_URI")
+        
         
         UPLOADED_PHOTOS_DEST = "app/static/photos"
 
 
 class ProdConfig(config):
-
-    pass
+        SQLALCHEMY_DATABASE_URI = os.environ.get("SQLALCHEMY_DATABASE_URI")
+    
 
 class DevConfig(config):
 

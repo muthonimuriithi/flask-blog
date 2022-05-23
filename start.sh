@@ -1,4 +1,4 @@
-export SQLALCHEMY_DATABASE_URI ="postgresql+psycopg2://bless:123@localhost/blog"
+export SQLALCHEMY_DATABASE_URI ="postgres://rzkzxbqnwaifal:44ccdbe3584ed1c56f40f199a64a03515c2bb47ee1db2a6a7cc9c4543c768a4d@ec2-44-194-117-205.compute-1.amazonaws.com:5432/dbfeetlpif7jkh"
 export MAIL_USERNAME='loisemuthoni181@gmail.com'
 export MAIL_PASSWORD='0725408650'
 export SECRET_KEY ='Hgtfvggn'
