@@ -1,7 +1,7 @@
 export SQLALCHEMY_DATABASE_URI ="postgresql+psycopg2://bless:123@localhost/blog"
 export MAIL_USERNAME='loisemuthoni181@gmail.com'
 export MAIL_PASSWORD='0725408650'
-export SECRET_KEY ='JHGVBN'
+export SECRET_KEY ='Hgtfvggn'
 
 python3 manage.py server
 # python3 manage.py shell
