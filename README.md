@@ -22,7 +22,7 @@ To view the app, open the live site link provided below on the README. Here is a
 
 * Here is the live link to the blog: https://bloggbless.herokuapp.com/ 
 
-1. Clone this repository using git clonehttps://github.com/muthonimuriithi/flask-blog.git/ or downloading a ZIP file of the code.
+1. Clone this repository using git clone: or downloading a ZIP file of the code.https://github.com/muthonimuriithi/flask-blog.git
 
 2. The repository, if downloaded as a .zip file will need to be extracted to your preferred location and opened
 
