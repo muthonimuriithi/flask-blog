@@ -16,11 +16,13 @@
 This is a personal blogging website where you can create and share your opinions and other users can read and comment on them. with a feature that displays random quotes to inspire your users.
 
 
-### Installation and setup
+## Installation and setup
 
 To view the app, open the live site link provided below on the README. Here is a run through of how to set up the application:
 
-1. Clone this repository using git clonehttps://github.com/muthonimuriithi/flask-blog.git, or downloading a ZIP file of the code.
+* Here is the live link to the blog: https://bloggbless.herokuapp.com/ 
+
+1. Clone this repository using git clonehttps://github.com/muthonimuriithi/flask-blog.git/ or downloading a ZIP file of the code.
 
 2. The repository, if downloaded as a .zip file will need to be extracted to your preferred location and opened
 
